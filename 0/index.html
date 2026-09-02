@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project 1 - CS180</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px auto;
+            max-width: 900px;
+            padding: 0 20px;
+            line-height: 1.5;
+        }
+        h1 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 8px;
+        }
+        h2 {
+            margin-top: 40px;
+        }
+        .photo-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .photo-block {
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+        }
+        .photo-block img {
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .caption {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 6px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .explanation {
+            background: #f7f7f7;
+            border-left: 4px solid #888;
+            padding: 12px 16px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <a class="back-link" href="../index.html">&larr; Back to Portfolio</a>
+
+    <h1>Project 1: The Selfie — Wrong Way vs. Right Way</h1>
+
+    <p>
+        This part demonstrates how camera-to-subject distance affects perspective
+        distortion in portraits, independent of how large the face appears in the
+        final frame.
+    </p>
+
+    <h2>The Two Photos</h2>
+    <div class="photo-row">
+        <div class="photo-block">
+            <img src="media/close_up.jpg" alt="Close-up selfie, distorted">
+            <p class="caption">Wrong way: camera ~10 inches from face, no zoom.</p>
+        </div>
+        <div class="photo-block">
+            <img src="media/far_zoomed.jpg" alt="Zoomed-in photo from far away, undistorted">
+            <p class="caption">Right way: camera ~8 feet away, zoomed in to match face size.</p>
+        </div>
+    </div>
+
+    <h2>Why This Happens</h2>
+    <div class="explanation">
+        <p>
+            Under perspective projection, a point's apparent size scales with
+            <em>f / Z</em>, where <em>f</em> is focal length and <em>Z</em> is its
+            distance from the camera. Facial features are not all at the same
+            depth &mdash; the nose sits several centimeters closer to the camera
+            than the ears or cheeks.
+        </p>
+        <p>
+            When the camera is very close, that few-centimeter depth difference is
+            a large <em>fraction</em> of the total distance, so near features
+            (the nose) get magnified much more than far features (the ears),
+            producing the bulging, distorted look of a typical close-up selfie.
+        </p>
+        <p>
+            When the camera is far away, that same depth difference is a tiny
+            fraction of the total distance, so all parts of the face are
+            magnified almost equally &mdash; the projection approaches
+            orthographic, and proportions look natural. Zooming in from far away
+            just increases <em>f</em> to bring the face back to a comparable
+            size in the frame, without reintroducing the depth-dependent
+            distortion, since it's <em>distance</em> (not focal length) that
+            controls the relative scaling between near and far features.
+        </p>
+    </div>
+
+</body>
+</html>
