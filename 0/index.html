@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Project 1 - CS180</title>
+    <title>Project 0 - CS180</title>
     <meta charset="UTF-8">
     <style>
         body {
@@ -68,39 +68,20 @@
     <div class="photo-row">
         <div class="photo-block">
             <img src="media/close_up.jpg" alt="Close-up selfie, distorted">
-            <p class="caption">Wrong way: camera ~10 inches from face, no zoom.</p>
+            <p class="caption">Wrong way: camera around 27 inches from face, no zoom.</p>
         </div>
         <div class="photo-block">
             <img src="media/far_zoomed.jpg" alt="Zoomed-in photo from far away, undistorted">
-            <p class="caption">Right way: camera ~8 feet away, zoomed in to match face size.</p>
+            <p class="caption">Right way: camera about 8.2 feet away, zoomed in to match face size.</p>
         </div>
     </div>
 
     <h2>Why This Happens</h2>
     <div class="explanation">
         <p>
-            Under perspective projection, a point's apparent size scales with
-            <em>f / Z</em>, where <em>f</em> is focal length and <em>Z</em> is its
-            distance from the camera. Facial features are not all at the same
-            depth &mdash; the nose sits several centimeters closer to the camera
-            than the ears or cheeks.
+            Since the distance to the face is different across the two cases, the relative closeness of my nose to the lens compared to my ears or hairline is so different (more pronounced in close-up, and less pronounced in far-zoomed) that the close-up selfie distorts my facial features while the far-zoomed one keep them balanced.
         </p>
-        <p>
-            When the camera is very close, that few-centimeter depth difference is
-            a large <em>fraction</em> of the total distance, so near features
-            (the nose) get magnified much more than far features (the ears),
-            producing the bulging, distorted look of a typical close-up selfie.
-        </p>
-        <p>
-            When the camera is far away, that same depth difference is a tiny
-            fraction of the total distance, so all parts of the face are
-            magnified almost equally &mdash; the projection approaches
-            orthographic, and proportions look natural. Zooming in from far away
-            just increases <em>f</em> to bring the face back to a comparable
-            size in the frame, without reintroducing the depth-dependent
-            distortion, since it's <em>distance</em> (not focal length) that
-            controls the relative scaling between near and far features.
-        </p>
+        
     </div>
 
 </body>
